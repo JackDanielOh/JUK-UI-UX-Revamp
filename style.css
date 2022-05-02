@@ -2783,13 +2783,13 @@ html {
     width: 100%;
     max-width: 760px;
     margin: 0 0 33px 0;
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 400;
     line-height: 1.4;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     white-space: normal;
     word-break: keep-all;
@@ -3625,15 +3625,15 @@ html {
 
 .article-view p {
     margin-bottom: 28px;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1em;
+    line-height: 2em;
     color: #555;
 }
 
 @media screen and (max-width: 1060px) {
     .article-view p {
-        font-size: 15px;
-        line-height: 26px;
+        font-size: 1em;
+        line-height: 1em;
     }
 }
 
@@ -3687,7 +3687,7 @@ html {
 
 .article-view ul li {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 2em;
     color: rgba(0, 0, 0, 0.87);
     word-break: break-all;
 }
