@@ -3625,15 +3625,19 @@ html {
 
 .article-view p {
     margin-bottom: 28px;
-    font-size: 1em;
-    line-height: 2em;
+    font-size: 16px;
+    line-height: 26px;
     color: #555;
+}
+
+.article-view span{
+	font-family: 'Noto Sans KR', Arial, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Nanum Gothic", Dotum, '돋움', Helvetica, sans-serif !important;
 }
 
 @media screen and (max-width: 1060px) {
     .article-view p {
-        font-size: 1em;
-        line-height: 1em;
+        font-size: 15px;
+        line-height: 26px;
     }
 }
 
@@ -3687,7 +3691,7 @@ html {
 
 .article-view ul li {
     font-size: 16px;
-    line-height: 2em;
+    line-height: 24px;
     color: rgba(0, 0, 0, 0.87);
     word-break: break-all;
 }
