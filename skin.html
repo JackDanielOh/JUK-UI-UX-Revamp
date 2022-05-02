@@ -876,6 +876,16 @@
 								</div>
               </s_sidebar_element>
             </s_sidebar>
+						
+						<!-- search-bar for MOBILE -->
+              <s_sidebar_element>
+                <!-- search-bar for MOBILE -->
+									<div class="util use-sidebar">
+										<div class="search">
+											<input class="searchInput" type="text" name="search" value="" placeholder="검색내용을 입력하세요." onkeypress="if (event.keyCode == 13) { requestSearch('.util.use-sidebar .searchInput') }">
+										</div>
+									</div>
+              </s_sidebar_element>
 
             <!-- sidebar 02 -->
             <s_sidebar>
@@ -889,17 +899,7 @@
                   </div>
                 </s_if_var_sidebarcategoryuse>
               </s_sidebar_element>
-              <s_sidebar_element>
-                <!-- 태그 -->
-                <div class="box-tag">
-                  <h3 class="title-sidebar">Tag</h3>
-                  <div class="box_tag">
-                    <s_random_tags>
-                      <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##],</a>
-                    </s_random_tags>
-                  </div>
-                </div>
-              </s_sidebar_element>
+							
 
               <s_sidebar_element>
                 <!-- 최근글과 인기글-->
@@ -942,87 +942,8 @@
                   </ul>
                 </div>
               </s_sidebar_element>
-              <!-- // 최근글과 인기글 -->
-
-              <s_sidebar_element>
-                <!-- 최근댓글 -->
-                <div class="box-reply">
-                  <h3 class="title-sidebar">최근댓글</h3>
-                  <ul class="list-sidebar">
-                    <s_rctrp_rep>
-                      <li>
-                        <a href="[##_rctrp_rep_link_##]" class="link-sidebar">
-                          <strong>[##_rctrp_rep_desc_##]</strong>
-                          <p>[##_rctrp_rep_name_##]</p>
-                        </a>
-                      </li>
-                    </s_rctrp_rep>
-                  </ul>
-                </div>
-              </s_sidebar_element>
-
-              <s_sidebar_element>
-                <!-- 공지사항 -->
-                <s_rct_notice>
-                  <div class="box-notice">
-                    <h3 class="title-sidebar">공지사항</h3>
-                    <ul class="list-sidebar">
-                      <s_rct_notice_rep>
-                        <li><a href="[##_notice_rep_link_##]" class="link-sidebar">[##_notice_rep_title_##]</a></li>
-                      </s_rct_notice_rep>
-                    </ul>
-                  </div>
-                </s_rct_notice>
-              </s_sidebar_element>
-
-              <s_sidebar_element>
-                <!-- 페이스북 트위터 플러그인 -->
-                <div class="box-plugins">
-                  <h3 class="title-sidebar blind">페이스북 트위터 플러그인</h3>
-                  <ul class="tab-sns">
-                    <li class="tab-button item-facebook on"><a class="tab-button" href="#" onclick="return false;">Facebook</a></li>
-                    <li class="tab-button item-twitter"><a class="tab-button" href="#" onclick="return false;">Twitter</a></li>
-                  </ul>
-
-                  <div class="plugin-facebook">
-                    <div id="fb-root"></div>
-                      <script>(function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s); js.id = id;
-                        js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=360877073936113&autoLogAppEvents=1';
-                        fjs.parentNode.insertBefore(js, fjs);
-                      }(document, 'script', 'facebook-jssdk'));</script>
-                    <div class="fb-page" data-href="[##_var_facebookurl_##]" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="[##_var_facebookurl_##]" class="fb-xfbml-parse-ignore"><a href="[##_var_facebookurl_##]"></a></blockquote>
-                    </div>
-                  </div>
-
-                  <div class="plugin-twitter" style="display: none;">
-                    <a class="twitter-timeline" href="[##_var_twitterurl_##]"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                  </div>
-                </div>
-              </s_sidebar_element>
-
-              <s_sidebar_element>
-                <!-- 글 보관함 -->
-                <div class="box-archive">
-                  <h3 class="title-sidebar">Archives</h3>
-                  <ul class="list-sidebar">
-                    <s_archive_rep>
-                      <li><a href="[##_archive_rep_link_##]" class="link-sidebar">[##_archive_rep_date_##]</a></li>
-                    </s_archive_rep>
-                  </ul>
-                </div>
-              </s_sidebar_element>
-
-              <s_sidebar_element>
-                <!-- 달력 모듈-->
-                <div class="box-calendar">
-                  <h3 class="title-sidebar"><span class="blind">Calendar</span></h3>
-                  <div class="inner-calendar">[##_calendar_##]</div>
-                </div>
-              </s_sidebar_element>
-
+              
+					
               <s_sidebar_element>
                 <!-- 방문자수 -->
                 <div class="box-visit">
@@ -1035,15 +956,6 @@
                 </div>
               </s_sidebar_element>
             </s_sidebar>
-
-						<!-- search-bar for MOBILE -->
-						<div class="util use-sidebar">
-							<div class="search">
-
-								<input class="searchInput" type="text" name="search" value="" placeholder="검색내용을 입력하세요." onkeypress="if (event.keyCode == 13) { requestSearch('.util.use-sidebar .searchInput') }">
-							</div>
-						</div>
-
           </aside>
           <!-- // aside -->
 
@@ -1068,6 +980,7 @@
             <s_if_var_footerLink3Name>
               <a href="[##_var_footerLink3Url_##]" class="link-footer">[##_var_footerLink3Name_##]</a>
             </s_if_var_footerLink3Name>
+						<a href="https://blog.joinuskorea.org/2220">주소: (07938) 서울특별시 양천구 신정중앙로 77 4F</a>
 						<a href="https://blog.joinuskorea.org/2220">오시는 길</a>
           </div>
 					<a> 조인어스코리아는 국내 최대 29개 ‘국경 없는 언어문화 지식교류활동가’(JOKOER)를 회원으로 둔 NGO로써,
@@ -1078,21 +991,10 @@
             <address>[##_var_footerAddress_##]</address>
           </div>
 
-          <div class="box-site">
-            <button type="button" data-toggle="xe-dropdown" aria-expanded="false">관련사이트</button>
-            <ul>
-              <s_link_rep>
-                <li class="on"><a href="[##_link_url_##]" target="_blank">[##_link_site_##]</a></li>
-              </s_link_rep>
-            </ul>
-          </div>
         </div>
 
       </footer>
       <!-- // footer -->
-
-
-
     </div>
     <!-- // wrap -->
   </s_t3>
