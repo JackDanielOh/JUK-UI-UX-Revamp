@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>Odyssey</name>
+		<version>1.0</version>
+		<description>
+			<![CDATA[ 공공사이트 ]]>
+		</description>
+		<license>
+			<![CDATA[ MIT License ]]>
+		</license>
+	</information>
+	<author>
+		<name>TISTORY</name>
+		<homepage>https://tistory.com</homepage>
+		<email>tistoryblog@daum.net</email>
+	</author>
+	<default>
+		<recentEntries>3</recentEntries>
+		<recentComments>3</recentComments>
+		<recentTrackbacks>4</recentTrackbacks>
+		<itemsOnGuestbook>4</itemsOnGuestbook>
+		<tagsInCloud>20</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>8</expandComment>
+		<lengthOfRecentNotice>50</lengthOfRecentNotice>
+		<lengthOfRecentEntry>70</lengthOfRecentEntry>
+		<lengthOfRecentComment>50</lengthOfRecentComment>
+		<lengthOfLink>30</lengthOfLink>
+		<commentMessage>
+			<none>0</none>
+			<single>1</single>
+		</commentMessage>
+		<contentWidth>700</contentWidth>
+		<entriesOnPage>10</entriesOnPage>
+		<entriesOnList>10</entriesOnList>
+		<showListOnCategory>2</showListOnCategory>
+		<showListOnHome>2</showListOnHome>
+		<showListLock>1</showListLock>
+		<liststyle>thumbnail</liststyle>
+	</default>
+	<liststyle>
+		<item>
+			<label>베이직 타입</label>
+			<value>thumbnail</value>
+		</item>
+		<item>
+			<label>이미지 크기 고정 타입</label>
+			<value>crop</value>
+		</item>
+		<item>
+			<label>이미지 비율 유지 타입</label>
+			<value>resize</value>
+		</item>
+		<item>
+			<label>포스터 타입</label>
+			<value>poster</value>
+		</item>
+	</liststyle>
+	<variables>
+		<variablegroup name="타이틀 헤더">
+			<variable>
+				<name>logoImage</name>
+				<label>로고 (높이 18px)</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="PC 레이아웃">
+			<variable>
+				<name>sidebartype</name>
+				<label>사이드바 형태</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"right", "label":"2단 우측 사이드바", "value":"right"},
+						{"name":"drawer", "label":"1단 서랍 사이드바", "value":"drawer"}
+					]
+				]]>
+				</option>
+				<default>right</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="목록 탐색 방법">
+			<variable>
+				<name>listmore</name>
+				<label>PC 목록 탐색</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"listmorenumber", "label":"페이지 나열", "value":"listmorenumber"},
+						{"name":"listmorebutton", "label":"더보기 버튼", "value":"listmorebutton"}
+					]
+				]]>
+				</option>
+				<default>listmorenumber</default>
+			</variable>
+			<variable>
+				<name>listmoremobile</name>
+				<label>모바일 목록 탐색</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"listmorenumbermobile", "label":"페이지 나열", "value":"listmorenumbermobile"},
+						{"name":"listmorebuttonmobile", "label":"더보기 버튼", "value":"listmorebuttonmobile"}
+					]
+				]]>
+				</option>
+				<default>listmorebuttonmobile</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="내비게이션">
+			<variable>
+				<name>topnav</name>
+				<label>내비게이션</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"topnavnone", "label":"사용 안 함", "value":"topnavnone"},
+						{"name":"topnavmenu", "label":"티스토리 '메뉴' 활용", "value":"topnavmenu"}
+					]
+				]]>
+				</option>
+				<default>topnavnone</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="슬로건 섹션">
+			<variable>
+				<name>headersloguntitle</name>
+				<label>슬로건 타이틀</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headersloguntext</name>
+				<label>슬로건 상세문구</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerslogundisplay</name>
+				<label>슬로건 섹션 보여줄 곳</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"headerslogundisplayon", "label":"홈에서만 노출", "value":"headerslogundisplayon"},
+						{"name":"headerslogundisplayoff", "label":"홈과 목록에서 함께 노출", "value":"headerslogundisplayoff"}
+					]
+				]]>
+				</option>
+				<default>headerslogundisplayon</default>
+			</variable>
+			<variable>
+				<name>headerslogunmobile</name>
+				<label>슬로건 섹션 모바일 적용</label>
+				<description></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="배너 섹션">
+			<variable>
+				<name>headerbannerimage</name>
+				<label>이미지</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerbannertitle</name>
+				<label>문구</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerbannertitlecolor</name>
+				<label>문구 색상</label>
+				<description></description>
+				<type>COLOR</type>
+				<option></option>
+				<default>#ffffff</default>
+			</variable>
+			<variable>
+				<name>headerbannerlink</name>
+				<label>자세히보기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerbannerlinkcolor</name>
+				<label>자세히보기 색상</label>
+				<description></description>
+				<type>COLOR</type>
+				<option></option>
+				<default>#ffffff</default>
+			</variable>
+			<variable>
+				<name>headerbannerlinkovercolor</name>
+				<label>자세히보기 커서 반응 색상</label>
+				<description></description>
+				<type>COLOR</type>
+				<option></option>
+				<default>#ffffff</default>
+			</variable>
+			<variable>
+				<name>headerbannerdisplay</name>
+				<label>배너 섹션 보여줄 곳</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"headerbannerdisplayon", "label":"홈에서만 노출", "value":"headerbannerdisplayon"},
+						{"name":"headerbannerdisplayoff", "label":"홈과 목록에서 함께 노출", "value":"headerbannerdisplayoff"}
+					]
+				]]>
+				</option>
+				<default>headerbannerdisplayon</default>
+			</variable>
+			<variable>
+				<name>bannermobile</name>
+				<label>배너 섹션 모바일 적용</label>
+				<description></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="사이드바 - 프로필">
+			<variable>
+				<name>Profilebgimage</name>
+				<label>프로필 배경 이미지</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profilefacebooklink</name>
+				<label>페이스북 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profileyoutubelink</name>
+				<label>유튜브 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profileinstalink</name>
+				<label>인스타그램 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profiletwitterlink</name>
+				<label>트위터 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+
+
+		<variablegroup name="사이드바 - SNS">
+			<variable>
+				<name>facebookurl</name>
+				<label>페이스북 페이지 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>twitterurl</name>
+				<label>트위터 타임라인 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="푸터">
+			<variable>
+				<name>footerLink1Name</name>
+				<label>외부링크1 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink1Url</name>
+				<label>외부링크1 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink2Name</name>
+				<label>외부링크2 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink2Url</name>
+				<label>외부링크2 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink3Name</name>
+				<label>외부링크3 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink3Url</name>
+				<label>외부링크3 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerCopyright</name>
+				<label>푸터 문구1</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default>Copyright © Kakao Corp. All rights reserved.</default>
+			</variable>
+			<variable>
+				<name>footerAddress</name>
+				<label>푸터 문구2</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+	</variables>
+	<cover>
+		<item>
+			<name>thumbnail</name>
+			<label>
+				<![CDATA[ 베이직 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 제목과 본문, 그리고 우측의 대표 이미지로 글 정보를 구성합니다.
+				'콘텐츠-최신 글' 사용시, more 버튼으로 글 목록 이동이 가능합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>crop</name>
+			<label>
+				<![CDATA[ 이미지 크기 고정 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 이미지를 일정 크기로 크롭하고, 제목과 본문으로 글 정보를 구성합니다.
+				4개 이상의 글을 포함할 경우엔 '더보기' 버튼이 나타납니다.]]>
+			</description>
+		</item>
+		<item>
+			<name>resize</name>
+			<label>
+				<![CDATA[ 이미지 비율 유지 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 이미지의 비율을 유지하고, 제목과 본문으로 글 정보를 구성합니다.
+				4개 이상의 글을 포함할 경우엔 '더보기' 버튼이 나타납니다.]]>
+			</description>
+		</item>
+		<item>
+			<name>poster</name>
+			<label>
+				<![CDATA[ 포스터 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 세로 포스텨 형태로 글 정보를 구성합니다.
+				'콘텐츠-최신 글' 사용시, more 버튼으로 글 목록 이동이 가능합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>text</name>
+			<label>
+				<![CDATA[ 단순 텍스트 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 이미지와 본문 없이, 단순히 제목만으로 글 정보를 구성합니다. ]]>
+			</description>
+		</item>
+	</cover>
+</skin>
