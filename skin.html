@@ -19,7 +19,6 @@
   <script> (function () { var test = vhCheck();}()); </script>
 </head>
 
-
 <body id="[##_body_id_##]" class="[##_var_headerslogundisplay_##] [##_var_headerbannerdisplay_##] [##_var_listmore_##] [##_var_listmoremobile_##] <s_if_var_headerbannerimage>use-banner-wrp</s_if_var_headerbannerimage> <s_if_var_headersloguntitle>use-slogan-wrp</s_if_var_headersloguntitle> use-menu-[##_var_topnav_##]-wrp">
 
   <s_t3>
@@ -35,8 +34,12 @@
           <div class="box-header">
             <h1 class="title-logo">
               <a href="[##_blog_link_##]" title="[##_title_##]" class="link_logo">
-                <s_if_var_logoImage>
+                <!-- LOGO -->
+								<s_if_var_logoImage>
+									<!-- Need to Adjust Size-->
                   <img src="[##_var_logoImage_##]" class="img_logo" alt="[##_title_##]">
+									
+
                 </s_if_var_logoImage>
                 <s_not_var_logoImage>
                   [##_title_##]
@@ -67,14 +70,12 @@
               </div>
               <!-- // area-slogan -->
             </s_if_var_headersloguntitle>
-
             <!-- area-gnb -->
             <div class="area-gnb">
               <nav class="[##_var_topnav_##]">
                 [##_blog_menu_##]
               </nav>
             </div>
-
             <button type="button" class="button-menu">
               <svg xmlns="//www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14">
                 <path fill="#333" fill-rule="evenodd" d="M0 0h20v2H0V0zm0 6h20v2H0V6zm0 6h20v2H0v-2z" />
@@ -878,8 +879,7 @@
 
             <!-- sidebar 02 -->
             <s_sidebar>
-              
-							<s_sidebar_element>
+              <s_sidebar_element>
                 <s_if_var_sidebarcategoryuse>
                   <!-- 카테고리 메뉴 -->
                   <div class="box-category box-category-2depth">
@@ -889,19 +889,18 @@
                   </div>
                 </s_if_var_sidebarcategoryuse>
               </s_sidebar_element>
-							<s_sidebar_element>
-                <!-- 방문자수 -->
-                <div class="box-visit">
-                  <h3 class="title-sidebar"><span class="blind">방문자수</span>Total</h3>
-                  <p class="text-total">[##_count_total_##]</p>
-                  <ul>
-                    <li class="item-visit">Today : [##_count_today_##]</li>
-                    <li class="item-visit">Yesterday : [##_count_yesterday_##]</li>
-                  </ul>
+              <s_sidebar_element>
+                <!-- 태그 -->
+                <div class="box-tag">
+                  <h3 class="title-sidebar">Tag</h3>
+                  <div class="box_tag">
+                    <s_random_tags>
+                      <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##],</a>
+                    </s_random_tags>
+                  </div>
                 </div>
               </s_sidebar_element>
-              
-							
+
               <s_sidebar_element>
                 <!-- 최근글과 인기글-->
                 <div class="box-recent">
@@ -962,20 +961,77 @@
                 </div>
               </s_sidebar_element>
 
-							<!-- 커스텀 광고란-->
-					  	<s_sidebar_element>
-                <div class="container">
-									<a href='https://happylog.naver.com/hlog/joinuskorea/donation'>
-        						<button class="GFG">
-            					<img src= "https://tistory4.daumcdn.net/tistory/5348406/skin/images/ad2.png">
-        						</button>
-    							</a>
+              <s_sidebar_element>
+                <!-- 공지사항 -->
+                <s_rct_notice>
+                  <div class="box-notice">
+                    <h3 class="title-sidebar">공지사항</h3>
+                    <ul class="list-sidebar">
+                      <s_rct_notice_rep>
+                        <li><a href="[##_notice_rep_link_##]" class="link-sidebar">[##_notice_rep_title_##]</a></li>
+                      </s_rct_notice_rep>
+                    </ul>
+                  </div>
+                </s_rct_notice>
+              </s_sidebar_element>
 
-									<img src= "https://tistory3.daumcdn.net/tistory/5348406/skin/images/bunchofbuttons.PNG">
-                	<img src= "https://tistory4.daumcdn.net/tistory/5348406/skin/images/ad1.png">
-									<img src= "https://tistory2.daumcdn.net/tistory/5348406/skin/images/zkzkdh.png">
-									<img src= "https://tistory2.daumcdn.net/tistory/5348406/skin/images/asdcscasc.png">
-									<img src= "https://tistory4.daumcdn.net/tistory/5348406/skin/images/ad2.png">
+              <s_sidebar_element>
+                <!-- 페이스북 트위터 플러그인 -->
+                <div class="box-plugins">
+                  <h3 class="title-sidebar blind">페이스북 트위터 플러그인</h3>
+                  <ul class="tab-sns">
+                    <li class="tab-button item-facebook on"><a class="tab-button" href="#" onclick="return false;">Facebook</a></li>
+                    <li class="tab-button item-twitter"><a class="tab-button" href="#" onclick="return false;">Twitter</a></li>
+                  </ul>
+
+                  <div class="plugin-facebook">
+                    <div id="fb-root"></div>
+                      <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=360877073936113&autoLogAppEvents=1';
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-page" data-href="[##_var_facebookurl_##]" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="[##_var_facebookurl_##]" class="fb-xfbml-parse-ignore"><a href="[##_var_facebookurl_##]"></a></blockquote>
+                    </div>
+                  </div>
+
+                  <div class="plugin-twitter" style="display: none;">
+                    <a class="twitter-timeline" href="[##_var_twitterurl_##]"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  </div>
+                </div>
+              </s_sidebar_element>
+
+              <s_sidebar_element>
+                <!-- 글 보관함 -->
+                <div class="box-archive">
+                  <h3 class="title-sidebar">Archives</h3>
+                  <ul class="list-sidebar">
+                    <s_archive_rep>
+                      <li><a href="[##_archive_rep_link_##]" class="link-sidebar">[##_archive_rep_date_##]</a></li>
+                    </s_archive_rep>
+                  </ul>
+                </div>
+              </s_sidebar_element>
+
+              <s_sidebar_element>
+                <!-- 달력 모듈-->
+                <div class="box-calendar">
+                  <h3 class="title-sidebar"><span class="blind">Calendar</span></h3>
+                  <div class="inner-calendar">[##_calendar_##]</div>
+                </div>
+              </s_sidebar_element>
+
+              <s_sidebar_element>
+                <!-- 방문자수 -->
+                <div class="box-visit">
+                  <h3 class="title-sidebar"><span class="blind">방문자수</span>Total</h3>
+                  <p class="text-total">[##_count_total_##]</p>
+                  <ul>
+                    <li class="item-visit">Today : [##_count_today_##]</li>
+                    <li class="item-visit">Yesterday : [##_count_yesterday_##]</li>
+                  </ul>
                 </div>
               </s_sidebar_element>
             </s_sidebar>
@@ -1012,7 +1068,11 @@
             <s_if_var_footerLink3Name>
               <a href="[##_var_footerLink3Url_##]" class="link-footer">[##_var_footerLink3Name_##]</a>
             </s_if_var_footerLink3Name>
+						<a href="https://blog.joinuskorea.org/2220">오시는 길</a>
           </div>
+					<a> 조인어스코리아는 국내 최대 29개 ‘국경 없는 언어문화 지식교류활동가’(JOKOER)를 회원으로 둔 NGO로써,
+지식을 통해 세계인과 교류하는 다국어&다문화 지식허브 커뮤니티를 운영하는 순수 비영리 민간외교 단체 입니다. </a>
+					
           <div>
             <p class="text-info">[##_var_footerCopyright_##]</p>
             <address>[##_var_footerAddress_##]</address>
@@ -1030,6 +1090,8 @@
 
       </footer>
       <!-- // footer -->
+
+
 
     </div>
     <!-- // wrap -->
